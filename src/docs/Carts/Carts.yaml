@@ -1,0 +1,69 @@
+paths:
+    /api/carrito/:
+        post:
+            summary: "Crear nuevo carrito"
+            tags:
+                - Carritos
+            responses:
+                "200":
+                    description: Carrito obtenido correctamente
+                "500":
+                    description: hubo un error en el servidor, usualmente por un proceso defectuoso    
+        get:
+            summary: "Obtener el Carrito"
+            tags:
+                - Carritos
+            responses:
+                "200":
+                    description: Carrito obtenido correctamente
+                "500":
+                    description: hubo un error en el servidor, usualmente por un proceso defectuoso
+    /api/carrito/add:
+        post:
+            summary: "Añadir producto al carrito"
+            tags:
+                - Carritos
+            responses:
+                "200":
+                    description: Producto añadido al carrito
+                "500":
+                    description: hubo un error, intentalo de nuevo.
+    /api/carrito/add/:id:
+        delete:
+            summary: "Obtener un carrito por ID"
+            tags:
+                - Carritos
+            responses:
+                "200":
+                    description: Carrito obtenido por ID correctamente
+                "500":
+                    description: hubo un error en el servidor, usualmente por un proceso defectuoso
+    /api/carrito/:id/productos:
+        get:
+            summary: "Ver productos por ID"
+            tags:
+                - Carritos
+            responses:
+                "200":
+                    description: Carrito obtenido por ID correctamente
+                "500":
+                    description: hubo un error en el servidor, usualmente por un proceso defectuoso    
+        post:
+            summary: "Producto agregado por ID"
+            tags:
+                - Carritos
+            responses:
+                "200":
+                    description: Carrito agregado por ID correctamente
+                "500":
+                    description: hubo un error en el servidor, usualmente por un proceso defectuoso
+    /api/carrito/:id/productos/:id_prod:
+        delete:
+            summary: "Producto borrado del carrito"
+            tags:
+                - Carritos
+            responses:
+                "200":
+                    description: Carrito borrado correctamente
+                "500":
+                    description: hubo un error en el servidor, usualmente por un proceso defectuoso
