@@ -1,3 +1,5 @@
 node_modules
 /node_modules
 servidor.config.js
+/src/config/servidor.js
+/servidor.config.js
