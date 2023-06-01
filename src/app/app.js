@@ -1,6 +1,6 @@
 import express from "express"
 import nodemailer from 'nodemailer'
-import { PORT , mongooseConnectStringToAtlas } from "../config/servidor.config.js"
+import { CORREO_EMAIL, PASSWORD_EMAIL, PORT , mongooseConnectStringToAtlas } from "../config/servidor.config.js"
 import { productsRouter } from "../routers/productsRouter.js";
 import { engine } from 'express-handlebars'
 import { cartsRouter } from "../routers/cartsRouter.js";
@@ -76,8 +76,8 @@ const transport =nodemailer.createTransport({
     service:'gmail',
     port:587,
     auth:{
-        user:'${CORREO_EMAIL}',
-        pass:'${PASSWORD_EMAIL}'
+        user:CORREO_EMAIL,
+        pass:PASSWORD_EMAIL
     }
 })
 
