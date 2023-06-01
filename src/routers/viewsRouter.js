@@ -19,8 +19,7 @@ viewsRouter.get("/products", onlyAuthenticated,async (req, res, next)=>{
         
     const products = await productModel.paginate({},pageOptions)
 
-    let user = false
-    /* PARA CUANDO INICIO SESSION, PORQUE USO EL ENDPOINT JWT que guarda una signed cookie */
+    let user = false   
     if(req.signedCookies.authToken !=undefined){
         const token = req.signedCookies.authToken
         const dataUser = encrypter.getDataFromToken(token)
@@ -57,8 +56,7 @@ viewsRouter.get("/carts", onlyAuthenticated, async (req, res, next)=>{
     const pageOptions = { limit: queryLimit, page: queryPage, lean : true, populate: 'products.product'}        
     const carts = await cartstModel.paginate({},pageOptions)
 
-    let user = false
-    /* PARA CUANDO INICIO SESSION, PORQUE USO EL ENDPOINT JWT que guarda una signed cookie */
+    let user = false    
     if(req.signedCookies.authToken !=undefined){
         const token = req.signedCookies.authToken
         const dataUser = encrypter.getDataFromToken(token)

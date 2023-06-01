@@ -27,9 +27,7 @@ export const generateUser = ()=>{
     for(let i=0;i<numberOfProducts;i++){
         const newProduct = generateProduct();
         products.push(newProduct);        
-    }
-    // console.log(numberOfProducts);
-    // console.log(products);
+    }   
     return{
         first_name:name.firstName(),
         last_name:name.lastName(),
@@ -38,10 +36,6 @@ export const generateUser = ()=>{
         cart:products
     }
 }
-// console.log(generateUser());
-
-//console.log(generateProduct());
-
 //generar productos mocking
 export default __dirname;
 

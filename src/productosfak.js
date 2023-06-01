@@ -23,9 +23,7 @@ export const generateUser = ()=>{
     for(let i=0;i<numberOfProducts;i++){
         const newProduct = generateProduct();
         products.push(newProduct);        
-    }
-    // console.log(numberOfProducts);
-    // console.log(products);
+    }    
     return{
         first_name:name.firstName(),
         last_name:name.lastName(),
@@ -35,6 +33,3 @@ export const generateUser = ()=>{
 
     }
 }
-// console.log(generateUser());
-
-//console.log(generateProduct());

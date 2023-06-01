@@ -21,24 +21,14 @@ export function getCredentialsCookie(req, res, next) {
     } catch (error) {}
 }
 export function getCredentialsBody(req, res, next) {
-    try {
-      /* 
-      ..
-      pendiente
-      ..
-      */
+    try {      
     next()
     } catch (error) {
         next( new AuthenticationError("Credenciales invalidas o inexistentes"))
      }
 }
 export function getCredentialsHeader(req, res, next) {
-    try {
-      /* 
-      ..
-      pendiente
-      ..
-      */
+    try {      
     next()
     } catch (error) {
         next( new AuthenticationError("Credenciales invalidas o inexistentes"))
@@ -70,7 +60,6 @@ export async function getCurrentUser (req , res , next){
       res.render("currentUser", {loguedUser :false}) 
     }else{
       const cartById = await DB_mongo_cart_manager.findCartById(user.cart)      
-      /* Necesario para solucionar error handlebars "Handlebars: Access has been denied to resolve the property "_id" because it is not an "own property" of its parent." Buscar alternativas*/
       const productsInCart = []
       cartById.products.forEach(p=>{ productsInCart.push( p.toObject()) })
       res.render("currentUser", {loguedUser : user!=undefined, user : user, products : productsInCart})

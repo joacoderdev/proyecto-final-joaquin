@@ -97,8 +97,7 @@ export class CartManager{
 
     async deleteProductInCart (cid,pid) {
         const cart = await this.getCartById(cid)  
-        // LUEGO ESTO DEBERA TIRAR UN ERROR SI NO EXISTE EL PRODUCTO EN CARTA
-        // this.productInCart(cid,pid);
+        // LUEGO ESTO DEBERA TIRAR UN ERROR SI NO EXISTE EL PRODUCTO EN CARTA        
         const productosRestantes=[];
         if(cart){
             const productsInCart = await this.getProductsByCartId(cid)
