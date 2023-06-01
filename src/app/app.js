@@ -76,8 +76,8 @@ const transport =nodemailer.createTransport({
     service:'gmail',
     port:587,
     auth:{
-        user:'joacoder.dev@gmail.com',
-        pass:'jockjsvaqbxmbkrs'
+        user:'${CORREO_EMAIL}',
+        pass:'${PASSWORD_EMAIL}'
     }
 })
 
