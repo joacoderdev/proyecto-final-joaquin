@@ -1,4 +1,5 @@
 import express from "express"
+import nodemailer from 'nodemailer'
 import { PORT , mongooseConnectStringToAtlas } from "../config/servidor.config.js"
 import { productsRouter } from "../routers/productsRouter.js";
 import { engine } from 'express-handlebars'
@@ -17,6 +18,7 @@ import { errorHandlerAPI } from "../middlewares/errorMiddleware.js";
 import cookieParser from "cookie-parser";
 import { COOKIE_SECRET } from "../config/auth.config.js";
 import { getCurrentUser } from "../middlewares/authenticator.js";
+import __dirname from "../utils.js";
 
 mongoose.connect(mongooseConnectStringToAtlas) // =>  REEMPLAZAR PARA CONECTAR A BD ATLAS..
 
@@ -48,6 +50,37 @@ app.get("/", (req, res, next)=>{
     res.render("home")
 })
 app.get("/api/session/current", getCurrentUser)
+
+app.get('/mail',async(req,res)=>{
+    let result = await transport.sendMail({
+        from: 'Coder Tests <joacoder.dev@gmail.com>',
+        to:'joacoder.dev@gmail.com',
+        subject:'correo de prueba',
+        html:`
+        <div>
+            <h1>Esto es un test</h1>
+            <img src="cid:river"/>
+        </div>
+        `,
+        attachments:[{
+            filename:'river.jpg',
+            path:__dirname+'/imagenes/river.png',
+            cid:'river'
+        }]    
+    })
+    res.send({status:"success",result:"Email Sent"})
+
+})
+
+const transport =nodemailer.createTransport({
+    service:'gmail',
+    port:587,
+    auth:{
+        user:'joacoder.dev@gmail.com',
+        pass:'jockjsvaqbxmbkrs'
+    }
+})
+
 
 app.use(errorHandlerAPI)
 
