@@ -2,8 +2,7 @@
   "type": "module",
   "name": "proyecto-final-joaquin",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/app.js",
+  "description": "",  
   "scripts": {
     "start": "node .",
     "test": "nodemon -e 'js' .e"
