@@ -1,4 +1,4 @@
 node_modules
 /node_modules
-servidor.config.jss
-src/config/servidor.config.js
+/config
+
