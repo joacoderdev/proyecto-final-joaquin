@@ -1,5 +1,4 @@
 node_modules
 /node_modules
-servidor.config.js
-/src/config/servidor.js
-/servidor.config.js
+servidor.config.jss
+/src/config/servidor.config.js
