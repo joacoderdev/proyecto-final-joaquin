@@ -1,6 +1,8 @@
+import dotenv from "dotenv";
+dotenv.config();
 import express from "express"
 import nodemailer from 'nodemailer'
-import { CORREO_EMAIL, PASSWORD_EMAIL, PORT , mongooseConnectStringToAtlas } from "../config/servidor.config.js"
+import { CORREO_EMAIL, PASSWORD_EMAIL, mongooseConnectStringToAtlas } from "../config/servidor.config.js"
 import { productsRouter } from "../routers/productsRouter.js";
 import { engine } from 'express-handlebars'
 import { cartsRouter } from "../routers/cartsRouter.js";
@@ -83,6 +85,8 @@ const transport =nodemailer.createTransport({
 
 
 app.use(errorHandlerAPI)
+
+const PORT = process.env.PORT
 
 
 const httpServer = app.listen(PORT, () => console.log("Corriendo el servidor exitosamente"))
