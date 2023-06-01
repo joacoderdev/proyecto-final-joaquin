@@ -78,7 +78,7 @@ export const passportInitialize = passport.initialize()
 export const passportSession = passport.session()
 
 // estos midlewares son para cada url de github y los otros para la estrategia local
-export const authLocal = passport.authenticate('local', { failWithError: true })  // PARA JWT, AL ELIMINAR TODO LO DE SESSION, ESTAS CONFIG DEBERAN LLEVAR session en false ('local', { session:false ,failWithError: true }) 
+export const authLocal = passport.authenticate('local', { failWithError: true })  // PARA JWTTT, AL ELIMINAR TODO LO DE SESSION, ESTAS CONFIG DEBERAN LLEVAR session en false ('local', { session:false ,failWithError: true }) 
 export const authLocalRegister = passport.authenticate('register', { failWithError: true })  // PARA JWT, AL ELIMINAR TODO LO DE SESSION, ESTAS CONFIG DEBERAN LLEVAR session en false ('local', { session:false ,failWithError: true }) 
 export const authGithub = passport.authenticate('github', { scope: ['user:email'] })  // PARA JWT, AL ELIMINAR TODO LO DE SESSION, ESTAS CONFIG DEBERAN LLEVAR session en false ('local', { session:false ,failWithError: true }) 
 export const callbackAuthGithub = passport.authenticate('github', { failWithError: true })   // PARA JWT, AL ELIMINAR TODO LO DE SESSION, ESTAS CONFIG DEBERAN LLEVAR session en false ('local', { session:false ,failWithError: true }) // { failWithError: true } => en caso de que falle deberia llamar al next()
