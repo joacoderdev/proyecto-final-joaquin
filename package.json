@@ -5,7 +5,7 @@
   "description": "", 
   "main": "src/main.js", 
   "scripts": {
-    "start": "nodemon src/app.js",
+    "start": "node src/app/app.js",
     "test": "nodemon -e 'js' .e"
   },
   "keywords": [],
